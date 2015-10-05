@@ -6,15 +6,14 @@ var nombre = localStorage.getItem("nombre");
 
 var url = "https://alumnoscurso.azure-mobile.net/Tables/Clase15";
 
+function logout() {
+    localStorage.removeItem("nombre");
+    location.replace("index.html");
+}
+
 $(document).ready(function () {
-
-    function salir() {
-        localStorage.removeItem("nombre");
-        location.replace("index.html");
-    }
-
-    function crear() {
-
+    var claseJson = [];
+    function add() {
         var mesa = {
             nombre: nombre,
             x: $("#x").val(),
@@ -60,17 +59,31 @@ $(document).ready(function () {
     }
 
 
-    function obtenerMesas() {
+    function refreshClase() {
         var auxUrl = url + "?$filter=nombre eq '" + nombre + "'";
 
-        $.get(auxUrl, pintarCanvas);
+        $.getJSON(auxUrl, function (res) {
+            localStorage.setItem(nombre + "_cache", JSON.stringify(res));
+            pintarCanvas(res);
+        });
 
     }
 
-    obtenerMesas();
-    $("#btnSalir").on("click", salir);
-    $("#btnCrear").on("click", crear);
+    function manageCache() {
+        if (!localStorage.getItem(nombre + "_cache")) {
+            refreshClase();
+        } else {
+            pintarCanvas(JSON.parse(localStorage.getItem(nombre + "_cache")));
+        }
 
-    $("#btnRecargar").on("click", obtenerMesas);
+    }
+
+    manageCache();
+
+
+    $("#btnSalir").on("click", logout);
+    $("#btnCrear").on("click", add);
+
+    $("#btnRecargar").on("click", refreshClase);
 
 });
