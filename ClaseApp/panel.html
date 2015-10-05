@@ -3,30 +3,41 @@
 <head>
     <title>Panel</title>
     <meta charset="utf-8" />
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" />
     <script src="Scripts/jquery-2.1.4.min.js"></script>
 </head>
 <body>
-    <h1>Panel</h1>
-    <button id="btnSalir">Desconectar</button>
-    <br /><br />
-    <div class="addBox">
-        <h2>Nuevo sitio</h2>
-        <input type="number" id="x" placeholder="Eje X" />
-        <input type="number" id="y" placeholder="Eje Y" />
-        <input type="number" id="w" placeholder="Ancho" />
-        <input type="number" id="h" placeholder="Largo" />
-        <input type="text" id="color" placeholder="Color" />
-        <button type="button" id="btnCrear">Crear</button>
+    <div class="wrapper">
+
+
+        <div class="headBox">
+            <h1>Panel</h1>
+            <button id="btnSalir"><i class="material-icons">exit_to_app</i></button>
+        </div>
+        <br /><br />
+        <div class="addBox">
+            <h2>Nueva mesa</h2>
+            <input type="number" id="x" placeholder="Eje X" />
+            <input type="number" id="y" placeholder="Eje Y" />
+            <input type="number" id="w" placeholder="Ancho" />
+            <input type="number" id="h" placeholder="Largo" />
+            <input type="text" id="color" placeholder="Color" />
+            <button type="button" id="btnCrear"><i class="material-icons">add</i></button>
+        </div>
+        <div class="canvasBox">
+            <h2>Organización de la clase</h2>
+            <button id="btnRecargar"><i class="material-icons">autorenew</i></button>
+
+            <canvas id="canvasClase" width="600" height="400"></canvas>
+        </div>
     </div>
-    <br />
-    <br />
-    <br />
-    <div class="classBox">
-        <h2>Organización de la clase</h2>
-        <canvas id="canvasClase" width="600" height="400"></canvas>
-        <button id="btnRecargar">Recargar</button>
-    </div>
+
+
+
+
+
     <script src="Scripts/panelJS.js"></script>
 </body>
 </html>

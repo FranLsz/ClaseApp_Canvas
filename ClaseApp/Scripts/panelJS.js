@@ -12,7 +12,6 @@ function logout() {
 }
 
 $(document).ready(function () {
-    var claseJson = [];
     function add() {
         var mesa = {
             nombre: nombre,
@@ -42,48 +41,37 @@ $(document).ready(function () {
 
 
 
-
-
-    function pintarCanvas(res) {
-
+    function render(mesas) {
         var canvas = document.getElementById("canvasClase");
         var ctx = canvas.getContext("2d");
-
-
-        for (var i = 0; i < res.length; i++) {
-            ctx.fillStyle = res[i].color;
-            ctx.fillRect(res[i].x, res[i].y, res[i].w, res[i].h);
+        for (var i = 0; i < mesas.length; i++) {
+            ctx.fillStyle = mesas[i].color;
+            ctx.fillRect(mesas[i].x, mesas[i].y, mesas[i].w, mesas[i].h);
             ctx.stroke();
         }
-
     }
-
 
     function refreshClase() {
         var auxUrl = url + "?$filter=nombre eq '" + nombre + "'";
 
         $.getJSON(auxUrl, function (res) {
             localStorage.setItem(nombre + "_cache", JSON.stringify(res));
-            pintarCanvas(res);
+            render(res);
         });
-
     }
 
     function manageCache() {
         if (!localStorage.getItem(nombre + "_cache")) {
             refreshClase();
         } else {
-            pintarCanvas(JSON.parse(localStorage.getItem(nombre + "_cache")));
+            render(JSON.parse(localStorage.getItem(nombre + "_cache")));
         }
-
     }
 
     manageCache();
 
-
     $("#btnSalir").on("click", logout);
     $("#btnCrear").on("click", add);
-
     $("#btnRecargar").on("click", refreshClase);
 
 });

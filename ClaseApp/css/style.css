@@ -1,2 +1,156 @@
-﻿body {
+﻿
+
+* {
+    font-family: 'Raleway', sans-serif;
 }
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: rgb(248, 248, 248);
+}
+
+.wrapper {
+    width: 100%;
+}
+
+    .wrapper .loginBox {
+        width: 400px;
+        height: 300px;
+        display: block;
+        margin: 0 auto;
+        background-color: rgb(51,51,51);
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .80);
+        padding: 20px;
+        margin-top: 200px;
+        color: white;
+    }
+
+        .wrapper .loginBox input[type=text] {
+            display: block;
+            margin: 0 auto;
+            width: 350px;
+            height: 40px;
+            border: 0;
+            font-size: 35px;
+            padding: 5px;
+            outline: none !important;
+        }
+
+        .wrapper .loginBox input[type=button] {
+            display: block;
+            margin: 0 auto;
+            border: 0;
+            width: 100px;
+            height: 40px;
+            background-color: white;
+            font-size: 25px;
+            padding: 5px;
+            outline: none !important;
+            margin-top: 100px;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+            .wrapper .loginBox input[type=button]:hover {
+                background-color: rgb(220, 220, 220);
+            }
+
+
+    .wrapper .headBox {
+        width: 300px;
+        background-color: rgb(51,51,51);
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .80);
+        padding: 20px;
+        margin: 20px;
+        color: white;
+    }
+
+        .wrapper .headBox button {
+            border: 0;
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            color: white;
+            padding: 5px;
+            outline: none !important;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            cursor: pointer;
+            margin-left: 250px;
+        }
+
+            .wrapper .headBox button i {
+                font-size: 40px;
+            }
+
+
+    .wrapper .addBox {
+        width: 300px;
+        height: 500px;
+        background-color: rgb(51,51,51);
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .80);
+        padding: 20px;
+        margin: 20px;
+        color: white;
+        float: left;
+    }
+
+        .wrapper .addBox input {
+            border: 0;
+            width: 110px;
+            display: block;
+            margin: 20px;
+            height: 40px;
+            font-size: 30px;
+            padding: 10px;
+        }
+
+        .wrapper .addBox button {
+            border: 0;
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            color: white;
+            padding: 0px;
+            outline: none !important;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            cursor: pointer;
+            margin-left: 250px;
+        }
+
+            .wrapper .addBox button i {
+                font-size: 40px;
+            }
+
+    .wrapper .canvasBox {
+        height: 500px;
+        width: 900px;
+        background-color: rgb(51,51,51);
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .80);
+        padding: 20px;
+        margin: 20px;
+        color: white;
+        float: left;
+    }
+
+        .wrapper .canvasBox button {
+            border: 0;
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            color: white;
+            padding: 0px;
+            outline: none !important;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            cursor: pointer;
+            margin-left: 850px;
+            margin-top: -100px;
+        }
+
+            .wrapper .canvasBox button i {
+                font-size: 40px;
+            }
